@@ -1,35 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
 
-	// Use this for initialization
-	void Start ()
-    {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     //Starts Game
     public void StartGame()
     {
-        Application.LoadLevel("demo");
+        SceneManager.LoadScene("demo");
     }
 
     //Loads Instructions
     public void Instructions()
     {
-        Application.LoadLevel("Demo Inst");
+        SceneManager.LoadScene("Demo Inst");
     }
 
     //Goes back to Start
     public void ReturnStart()
     {
-        Application.LoadLevel("Demo Start");
+        SceneManager.LoadScene("Demo Start");
     }
 }
