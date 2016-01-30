@@ -26,7 +26,7 @@ public class ButtonPresser : MonoBehaviour {
     /// <summary>
     /// The minimum waiting period before going after target again
     /// </summary>
-    private float minWait = 1.0f;
+    public float minWait = 1.0f;
 
     /// <summary>
     /// How long the object has currently waited to go after target
@@ -43,7 +43,7 @@ public class ButtonPresser : MonoBehaviour {
     /// 1 = Attack
     /// 2 = Retreat
     /// </summary>
-    public int state = 0;
+    private int state = 0;
 
     public void Awake()
     {

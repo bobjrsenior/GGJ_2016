@@ -136,5 +136,9 @@ public class Movement : MonoBehaviour {
             speedMultiplierTimer += boostTime;
             Destroy(collider.gameObject);
         }
+        else if (collider.gameObject.CompareTag("Trampoline"))
+        {
+            rigidbody.velocity = new Vector2(rigidbody.velocity.x, -rigidbody.velocity.y);
+        }
     }
 }
