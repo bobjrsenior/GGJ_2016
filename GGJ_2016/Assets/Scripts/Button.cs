@@ -48,7 +48,8 @@ public class Button : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Player")){
+        if (collider.gameObject.CompareTag("Player") || collider.gameObject.CompareTag("Deadly"))
+        {
             //If opening a door
             if (generic == null)
             {
