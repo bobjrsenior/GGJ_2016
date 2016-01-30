@@ -23,6 +23,9 @@ public class BackAndForth : MonoBehaviour {
     /// </summary>
     private new Rigidbody2D rigidbody;
 
+    /// <summary>
+    /// Time for the cos function
+    /// </summary>
     private float time = 0;
 
     public void Awake()
