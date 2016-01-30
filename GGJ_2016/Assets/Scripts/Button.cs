@@ -9,9 +9,14 @@ public class Button : MonoBehaviour {
     public Door door;
 
     /// <summary>
+    /// A generic object that can be toggled off and on
+    /// </summary>
+    public GameObject generic;
+
+    /// <summary>
     /// Is the button pressed?
     /// </summary>
-    private bool pressed = false;
+    public bool pressed = false;
 
     /// <summary>
     /// Sprite to show when the door is open
@@ -36,16 +41,32 @@ public class Button : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player")){
-            door.toggle();
+            //If opening a door
+            if (generic == null)
+            {
+                door.toggle();
+            }
             if (pressed)
             {
                 pressed = false;
                 renderer.sprite = notpressedSprite;
+
+                //If not opening a door
+                if (generic != null)
+                {
+                    generic.SetActive(false);
+                }
             }
             else
             {
                 pressed = true;
                 renderer.sprite = pressedSprite;
+
+                //If not opening a door
+                if (generic != null)
+                {
+                    generic.SetActive(true);
+                }
             }
         }
     }
