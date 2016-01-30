@@ -12,9 +12,9 @@ public class Movement : MonoBehaviour {
     /// <summary>
     /// How fast jumping moves you up in Units/Second
     /// </summary>
-    private float jumpSpeed = 7.5f;
+    public float jumpSpeed = 7.5f;
 
-    private float maxJumpSpeed = 12.0f;
+    public float maxJumpSpeed = 8.0f;
 
     /// <summary>
     /// How much horizontal speed you lose in %/Second (1.00 = 100%/Second)
