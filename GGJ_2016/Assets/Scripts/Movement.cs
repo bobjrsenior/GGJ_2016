@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         //Grabbing velocity preserves velocity components not used
         Vector3 velocity = rigidbody.velocity;
         if (Input.GetButton("Horizontal"))
@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour {
         else if(velocity.x != 0)
         {
             //Lose velocity at a rate of speedLossPercent of total velocity per second
-            velocity.x -= velocity.x * speedLossPercent * Time.deltaTime;
+            velocity.x -= velocity.x * speedLossPercent * Time.fixedDeltaTime;
             //Make sure to stop completely at some point
             if(Mathf.Abs(velocity.x) < 0.1f)
             {
@@ -65,6 +65,7 @@ public class Movement : MonoBehaviour {
         }
 
         rigidbody.velocity = velocity;
+        Camera.main.transform.position = new Vector3(this.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
 	}
 
     void OnCollisionEnter2D(Collision2D collider)
