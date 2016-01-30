@@ -4,13 +4,34 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-    private Text text;
+    /// <summary>
+    /// A static reference to the current timer to track through iterations
+    /// </summary>
+    public static Timer timer = null;
 
-    private float time = 0.0f;
+    /// <summary>
+    /// UI Text that will display the game time
+    /// </summary>
+    public Text text;
+
+    /// <summary>
+    /// Current game time
+    /// </summary>
+    public float time = 0.0f;
 	
     public void Awake()
     {
-        text = GetComponent<Text>();
+        if (timer != null)
+        {
+            Destroy(transform.parent.gameObject);
+            return;
+        }
+        else {
+            timer = this;
+            DontDestroyOnLoad(transform.parent.gameObject);
+            text = GetComponent<Text>();
+        }
+        
     }
 
 	// Update is called once per frame
