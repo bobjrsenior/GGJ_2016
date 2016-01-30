@@ -23,6 +23,8 @@ public class BackAndForth : MonoBehaviour {
     /// </summary>
     private new Rigidbody2D rigidbody;
 
+    private float time = 0;
+
     public void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -30,6 +32,7 @@ public class BackAndForth : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        rigidbody.velocity = direction * amplitude * Mathf.Cos(frequency * (Time.time));
+        time += Time.fixedDeltaTime;
+        rigidbody.velocity = direction * amplitude * Mathf.Cos(frequency * (time));
 	}
 }
