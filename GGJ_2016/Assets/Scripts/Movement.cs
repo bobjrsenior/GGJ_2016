@@ -115,6 +115,7 @@ public class Movement : MonoBehaviour {
 
     public void die()
     {
+        Audio.audioPlayer.playLevelIncomplete();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -127,11 +128,13 @@ public class Movement : MonoBehaviour {
         }
         else if (collider.gameObject.CompareTag("Goal"))
         {
+            Audio.audioPlayer.playLevelComplete();
             LevelCounter.levelCounter.incrementLevel();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if (collider.gameObject.CompareTag("SpeedBoost"))
         {
+            Audio.audioPlayer.playSpeedBoost();
             speedMultipier += boostAdder;
             speedMultiplierTimer += boostTime;
             Destroy(collider.gameObject);
