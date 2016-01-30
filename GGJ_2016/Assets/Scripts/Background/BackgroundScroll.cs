@@ -27,11 +27,13 @@ public class BackgroundScroll : MonoBehaviour {
         {
             //Swap sides to the side the player is going to the nearest minDistance (keeps clean loop)
             if(playerRB.velocity.x > 0) {
-                transform.position = new Vector2(player.position.x - (player.position.x % minDistance) + minDistance, transform.position.y);
+                //transform.position = new Vector2(player.position.x - (player.position.x % minDistance) + minDistance, transform.position.y);
+                transform.Translate(2 * minDistance, 0, 0);
             }
             else
             {
-                transform.position = new Vector2(player.position.x - (player.position.x % minDistance) - minDistance, transform.position.y);
+                //transform.position = new Vector2(player.position.x - (player.position.x % minDistance) - minDistance, transform.position.y);
+                transform.Translate(-2 * minDistance, 0, 0);
             }
         }
 	}

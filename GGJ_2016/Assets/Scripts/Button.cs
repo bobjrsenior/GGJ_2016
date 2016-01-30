@@ -36,6 +36,14 @@ public class Button : MonoBehaviour {
     public void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
+        if (pressed)
+        {
+            renderer.sprite = pressedSprite;
+        }
+        else
+        {
+            renderer.sprite = notpressedSprite;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
