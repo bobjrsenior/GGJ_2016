@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour {
         }
 
         rigidbody.velocity = velocity;
-        Camera.main.transform.position = new Vector3(this.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
 	}
 
     void OnCollisionEnter2D(Collision2D collider)
