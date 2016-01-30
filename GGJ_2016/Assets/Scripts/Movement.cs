@@ -81,10 +81,7 @@ public class Movement : MonoBehaviour {
 
     public void die()
     {
-        transform.position = Vector2.zero;
-        transform.rotation = Quaternion.identity;
-        rigidbody.velocity = Vector3.zero;
-        rigidbody.angularVelocity = 0.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void OnCollisionEnter2D(Collision2D collider)
