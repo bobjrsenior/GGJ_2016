@@ -9,17 +9,17 @@ public class Door : MonoBehaviour {
     private bool open = false;
 
     /// <summary>
-    /// Material to show when the door is open
+    /// Sprite to show when the door is open
     /// </summary>
-    public Sprite openMat;
+    public Sprite openSprite;
 
     /// <summary>
-    /// Material to show when the door is closed
+    /// Sprite to show when the door is closed
     /// </summary>
-    public Sprite closedMat;
+    public Sprite closedSprite;
 
     /// <summary>
-    /// The objects sprite render (used to change the material of the door)
+    /// The objects sprite render (used to change the sprite of the door)
     /// </summary>
     private new SpriteRenderer renderer;
 
@@ -41,13 +41,13 @@ public class Door : MonoBehaviour {
         if (open)
         {
             open = false;
-            renderer.sprite = closedMat;
+            renderer.sprite = closedSprite;
             collider.enabled = true;
         }//If closed, open the door and disable the collider
         else
         {
             open = true;
-            renderer.sprite = openMat;
+            renderer.sprite = openSprite;
             collider.enabled = false;
         }
     }
