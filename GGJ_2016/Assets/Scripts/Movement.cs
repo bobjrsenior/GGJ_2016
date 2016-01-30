@@ -14,12 +14,35 @@ public class Movement : MonoBehaviour {
     /// </summary>
     public float jumpSpeed = 7.5f;
 
+    /// <summary>
+    /// The maximum possible vertical speed in Units/Second
+    /// </summary>
     public float maxJumpSpeed = 8.0f;
 
     /// <summary>
     /// How much horizontal speed you lose in %/Second (1.00 = 100%/Second)
     /// </summary>
     private float speedLossPercent = 5.00f;
+
+    /// <summary>
+    /// Multiplies speed by a certain amount
+    /// </summary>
+    private float speedMultipier = 1.0f;
+
+    /// <summary>
+    /// How long until the speedMultiplier expires
+    /// </summary>
+    private float speedMultiplierTimer = 0.0f;
+
+    /// <summary>
+    /// How much of a boost you get from boost items
+    /// </summary>
+    public float boostAdder = 1.0f;
+
+    /// <summary>
+    /// How much boost time you get from a boost item
+    /// </summary>
+    public float boostTime = 1.0f;
 
     /// <summary>
     /// Can the object jump?
@@ -39,11 +62,22 @@ public class Movement : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+        if(speedMultiplierTimer > 0)
+        {
+            speedMultiplierTimer -= Time.fixedDeltaTime;
+            if(speedMultiplierTimer <= 0)
+            {
+                speedMultiplierTimer = 0;
+                speedMultipier = 1.0f;
+            }
+        }
+
+
         //Grabbing velocity preserves velocity components not used
         Vector3 velocity = rigidbody.velocity;
         if (Input.GetButton("Horizontal"))
         {
-            velocity.x = Input.GetAxis("Horizontal") * movementSpeed;
+            velocity.x = Input.GetAxis("Horizontal") * movementSpeed * speedMultipier;
         }
         else if(velocity.x != 0)
         {
@@ -63,9 +97,9 @@ public class Movement : MonoBehaviour {
         }
 
         //Cap the maximum vertical velocity
-        if(velocity.y > maxJumpSpeed)
+        if(velocity.y > maxJumpSpeed * speedMultipier)
         {
-            velocity.y = maxJumpSpeed;
+            velocity.y = maxJumpSpeed * speedMultipier;
         }
 
         //Reset the object if below the map
@@ -95,6 +129,12 @@ public class Movement : MonoBehaviour {
         {
             LevelCounter.levelCounter.incrementLevel();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (collider.gameObject.CompareTag("SpeedBoost"))
+        {
+            speedMultipier += boostAdder;
+            speedMultiplierTimer += boostTime;
+            Destroy(collider.gameObject);
         }
     }
 }
