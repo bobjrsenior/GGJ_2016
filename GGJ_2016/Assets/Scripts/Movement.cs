@@ -93,7 +93,8 @@ public class Movement : MonoBehaviour {
         }
         else if (collider.gameObject.CompareTag("Goal"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            LevelCounter.levelCounter.incrementLevel();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
