@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour {
     /// </summary>
     private float jumpSpeed = 7.5f;
 
+    private float maxJumpSpeed = 12.0f;
+
     /// <summary>
     /// How much horizontal speed you lose in %/Second (1.00 = 100%/Second)
     /// </summary>
@@ -57,19 +59,37 @@ public class Movement : MonoBehaviour {
         {
             velocity.y += jumpSpeed;
             canJump = false;
-        }//Reset the object if below the map
-        else if(transform.position.y < -7)
+        }
+
+        //Cap the maximum vertical velocity
+        if(velocity.y > maxJumpSpeed)
         {
-            transform.position = Vector2.zero;
-            velocity = Vector3.zero;
+            velocity.y = maxJumpSpeed;
+        }
+
+        //Reset the object if below the map
+        if (transform.position.y < -7)
+        {
+            die();
+            return;
         }
 
         rigidbody.velocity = velocity;
         Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
 	}
 
+    public void die()
+    {
+        transform.position = Vector2.zero;
+        rigidbody.velocity = Vector3.zero;
+    }
+
     void OnCollisionEnter2D(Collision2D collider)
     {
         canJump = true;
+        if (collider.gameObject.CompareTag("Deadly"))
+        {
+            die();
+        }
     }
 }
