@@ -57,6 +57,11 @@ public class Movement : MonoBehaviour {
         {
             velocity.y += jumpSpeed;
             canJump = false;
+        }//Reset the object if below the map
+        else if(transform.position.y < -7)
+        {
+            transform.position = Vector2.zero;
+            velocity = Vector3.zero;
         }
 
         rigidbody.velocity = velocity;
