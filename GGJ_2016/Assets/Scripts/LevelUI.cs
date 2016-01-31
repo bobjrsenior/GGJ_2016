@@ -9,12 +9,12 @@ public class LevelUI : MonoBehaviour {
     public void Awake()
     {
         text = GetComponent<Text>();
-        text.text = "Level: " + LevelCounter.levelCounter.level;
+        text.text = "Iteration: " + LevelCounter.levelCounter.level;
     }
 
     void OnLevelWasLoaded()
     {
-        text.text = "Level: " + LevelCounter.levelCounter.level;
+        text.text = "Iteration: " + LevelCounter.levelCounter.level;
     }
 
 }
