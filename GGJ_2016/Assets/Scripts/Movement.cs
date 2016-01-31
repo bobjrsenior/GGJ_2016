@@ -154,6 +154,14 @@ public class Movement : MonoBehaviour {
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, -rigidbody.velocity.y);
             }
+            else if (collider.gameObject.CompareTag("PantheonGoal"))
+            {
+                SceneManager.LoadScene("End_Scene_2");
+            }
+            else if (collider.gameObject.CompareTag("PantheonEntrance"))
+            {
+                SceneManager.LoadScene("Pantheon");
+            }
         }
         else
         {
