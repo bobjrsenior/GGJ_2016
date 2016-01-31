@@ -121,27 +121,30 @@ public class Movement : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collider)
     {
-        canJump = true;
-        if (collider.gameObject.CompareTag("Deadly"))
+        if (!collider.gameObject.CompareTag("NoJump"))
         {
-            die();
-        }
-        else if (collider.gameObject.CompareTag("Goal"))
-        {
-            Audio.audioPlayer.playLevelComplete();
-            LevelCounter.levelCounter.incrementLevel();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        else if (collider.gameObject.CompareTag("SpeedBoost"))
-        {
-            Audio.audioPlayer.playSpeedBoost();
-            speedMultipier += boostAdder;
-            speedMultiplierTimer += boostTime;
-            Destroy(collider.gameObject);
-        }
-        else if (collider.gameObject.CompareTag("Trampoline"))
-        {
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, -rigidbody.velocity.y);
+            canJump = true;
+            if (collider.gameObject.CompareTag("Deadly"))
+            {
+                die();
+            }
+            else if (collider.gameObject.CompareTag("Goal"))
+            {
+                Audio.audioPlayer.playLevelComplete();
+                LevelCounter.levelCounter.incrementLevel();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else if (collider.gameObject.CompareTag("SpeedBoost"))
+            {
+                Audio.audioPlayer.playSpeedBoost();
+                speedMultipier += boostAdder;
+                speedMultiplierTimer += boostTime;
+                Destroy(collider.gameObject);
+            }
+            else if (collider.gameObject.CompareTag("Trampoline"))
+            {
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, -rigidbody.velocity.y);
+            }
         }
     }
 }
