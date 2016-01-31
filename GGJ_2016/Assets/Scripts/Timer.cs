@@ -48,6 +48,15 @@ public class Timer : MonoBehaviour {
         }
 	}
 
+    /// <summary>
+    /// Returns the current play time
+    /// </summary>
+    /// <returns></returns>
+    public float getTime()
+    {
+        return time;
+    }
+
     void OnLevelWasLoaded()
     {
         if (LevelCounter.levelCounter.level == 31)
