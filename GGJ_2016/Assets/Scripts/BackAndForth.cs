@@ -19,6 +19,11 @@ public class BackAndForth : MonoBehaviour {
     public float amplitude = 2.0f;
 
     /// <summary>
+    /// Offset the cos wave
+    /// </summary>
+    public float offset = 0.0f;
+
+    /// <summary>
     /// Using the RigidBody for movement plays nice with Unity's Physics
     /// </summary>
     private Rigidbody2D rigidbody;
@@ -36,6 +41,6 @@ public class BackAndForth : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         time += Time.fixedDeltaTime;
-        rigidbody.velocity = direction * amplitude * Mathf.Cos(frequency * (time));
+        rigidbody.velocity = direction * amplitude * Mathf.Cos(frequency * (time) + offset);
 	}
 }
