@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour {
     /// <summary>
     /// New keyword to hide warning about hiding rigidbody keyword
     /// </summary>
-    private new Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
 
     public void Awake()
     {
@@ -64,7 +64,13 @@ public class Movement : MonoBehaviour {
 	void FixedUpdate () {
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("Demo Start");
+            if (SceneManager.GetActiveScene().name.Equals("Demo Start"))
+            {
+                Application.Quit();
+            }
+            else {
+                SceneManager.LoadScene("Demo Start");
+            }
         }
         if(speedMultiplierTimer > 0)
         {

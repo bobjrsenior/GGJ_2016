@@ -16,7 +16,7 @@ public class ButtonPresser : MonoBehaviour {
     /// <summary>
     /// This objects rigid body in order to access velocity
     /// </summary>
-    private new Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
 
     /// <summary>
     /// The rate at which this object moves in Units/Second

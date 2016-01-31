@@ -12,7 +12,7 @@ public class ContinuousJump : MonoBehaviour {
     /// <summary>
     /// New keyword to hide warning about hiding rigidbody keyword
     /// </summary>
-    private new Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
 
     // Use this for initialization
     void Start () {

@@ -31,7 +31,7 @@ public class Button : MonoBehaviour {
     /// <summary>
     /// The objects sprite render (used to change the sprite of the button)
     /// </summary>
-    private new SpriteRenderer renderer;
+    private SpriteRenderer renderer;
 
     public void Awake()
     {

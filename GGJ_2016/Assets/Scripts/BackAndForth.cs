@@ -21,7 +21,7 @@ public class BackAndForth : MonoBehaviour {
     /// <summary>
     /// Using the RigidBody for movement plays nice with Unity's Physics
     /// </summary>
-    private new Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
 
     /// <summary>
     /// Time for the cos function

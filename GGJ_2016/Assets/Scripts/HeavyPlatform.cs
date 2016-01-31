@@ -17,7 +17,7 @@ public class HeavyPlatform : MonoBehaviour {
     /// Using the RigidBody for movement plays nice with Unity's Physics
     /// Translating instead made the fall look jumpy
     /// </summary>
-    private new Rigidbody2D rigidbody;
+    private Rigidbody2D rigidbody;
 
     public void Start()
     {

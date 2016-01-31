@@ -21,12 +21,12 @@ public class Door : MonoBehaviour {
     /// <summary>
     /// The objects sprite render (used to change the sprite of the door)
     /// </summary>
-    private new SpriteRenderer renderer;
+    private SpriteRenderer renderer;
 
     /// <summary>
     /// The objects collider (disabled when open)
     /// </summary>
-    private new Collider2D collider;
+    private Collider2D collider;
 
     public void Awake()
     {
