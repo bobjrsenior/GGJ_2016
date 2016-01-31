@@ -142,7 +142,6 @@ public class Movement : MonoBehaviour {
             {
                 Audio.audioPlayer.playLevelComplete();
                 LevelCounter.levelCounter.incrementLevel();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else if (collider.gameObject.CompareTag("SpeedBoost"))
             {

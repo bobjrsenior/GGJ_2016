@@ -41,6 +41,14 @@ public class LevelCounter : MonoBehaviour {
     public void incrementLevel()
     {
         ++level;
+        if (level <= 30)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else
+        {
+            SceneManager.LoadScene("End_Screen");
+        }
     }
 
     /// <summary>

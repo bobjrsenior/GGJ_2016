@@ -12,12 +12,17 @@ public class Timer : MonoBehaviour {
     /// <summary>
     /// UI Text that will display the game time
     /// </summary>
-    public Text text;
+    private Text text;
 
     /// <summary>
     /// Current game time
     /// </summary>
     public float time = 0.0f;
+
+    /// <summary>
+    /// Incrment time?
+    /// </summary>
+    private bool running = true;
 	
     public void Awake()
     {
@@ -36,7 +41,18 @@ public class Timer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        time += Time.deltaTime;
-        text.text = "" + (int)(time * 100) / 100.0f;
+        if (running)
+        {
+            time += Time.deltaTime;
+            text.text = "" + (int)(time * 100) / 100.0f;
+        }
 	}
+
+    void OnLevelWasLoaded()
+    {
+        if (LevelCounter.levelCounter.level == 31)
+        {
+            running = false;
+        }
+    }
 }

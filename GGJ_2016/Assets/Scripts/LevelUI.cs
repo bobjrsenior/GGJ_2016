@@ -14,7 +14,14 @@ public class LevelUI : MonoBehaviour {
 
     void OnLevelWasLoaded()
     {
-        text.text = "Iteration: " + LevelCounter.levelCounter.level;
+        if (LevelCounter.levelCounter.level != 31)
+        {
+            text.text = "Iteration: " + LevelCounter.levelCounter.level;
+        }
+        else
+        {
+            text.text = "Iteration: OK";
+        }
     }
 
 }
