@@ -8,7 +8,7 @@ public class SceneSwitch : MonoBehaviour
     //Starts Game
     public void StartGame()
     {
-        SceneManager.LoadScene("demo");
+        SceneManager.LoadScene("Level_1");
     }
 
     //Loads Instructions
