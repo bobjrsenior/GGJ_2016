@@ -17,7 +17,7 @@ public class LevelCounter : MonoBehaviour {
 
     public void Awake()
     {
-        if(SceneManager.GetActiveScene().name.Equals("Demo Start"))
+        if(SceneManager.GetActiveScene().name.Equals("Demo Start") && Timer.timer != null)
         {
             Destroy(Timer.timer.transform.parent.gameObject);
             Timer.timer = null;

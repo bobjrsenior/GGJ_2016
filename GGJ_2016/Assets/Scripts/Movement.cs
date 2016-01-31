@@ -62,6 +62,10 @@ public class Movement : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Demo Start");
+        }
         if(speedMultiplierTimer > 0)
         {
             speedMultiplierTimer -= Time.fixedDeltaTime;
