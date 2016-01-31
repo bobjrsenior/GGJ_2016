@@ -8,6 +8,7 @@ public class SceneSwitch : MonoBehaviour
     //Starts Game
     public void StartGame()
     {
+        LevelCounter.levelCounter.resetLevel();
         SceneManager.LoadScene("Level_1");
     }
 

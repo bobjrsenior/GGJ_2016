@@ -47,7 +47,7 @@ public class LevelCounter : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("End_Screen");
+            SceneManager.LoadScene("End_Scene_2");
         }
     }
 
