@@ -146,5 +146,9 @@ public class Movement : MonoBehaviour {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, -rigidbody.velocity.y);
             }
         }
+        else
+        {
+            canJump = false;
+        }
     }
 }
