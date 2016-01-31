@@ -41,7 +41,6 @@ public class LevelCounter : MonoBehaviour {
     public void incrementLevel()
     {
         ++level;
-        print(level);
     }
 
     /// <summary>
