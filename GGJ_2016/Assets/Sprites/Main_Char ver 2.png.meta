@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: bcd2410d42133b140b08209068a63101
-timeCreated: 1454196379
+timeCreated: 1454196864
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Main_Char ver 2_0
+    21300002: Main_Char ver 2_1
+    21300004: Main_Char ver 2_2
+    21300006: Main_Char ver 2_3
+    21300008: Main_Char ver 2_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +43,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +54,103 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Main_Char ver 2_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 133
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 9}
+        - {x: -29, y: -3}
+        - {x: -29, y: -15}
+        - {x: -19, y: -25}
+        - {x: -6, y: -31}
+        - {x: 5, y: -31}
+        - {x: 15, y: -24}
+        - {x: 15, y: -7}
+        - {x: -7, y: 9}
+    - name: Main_Char ver 2_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 133
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 9}
+        - {x: -27, y: -3}
+        - {x: -27, y: -22}
+        - {x: -11, y: -31}
+        - {x: 12, y: -31}
+        - {x: 15, y: -23}
+        - {x: 15, y: -3}
+        - {x: -8, y: 9}
+    - name: Main_Char ver 2_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 133
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 9}
+        - {x: -29, y: -3}
+        - {x: -29, y: -15}
+        - {x: -19, y: -25}
+        - {x: -6, y: -31}
+        - {x: 5, y: -31}
+        - {x: 15, y: -24}
+        - {x: 15, y: -7}
+        - {x: -7, y: 9}
+    - name: Main_Char ver 2_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 133
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 9}
+        - {x: -27, y: -3}
+        - {x: -27, y: -22}
+        - {x: -11, y: -31}
+        - {x: 12, y: -31}
+        - {x: 15, y: -23}
+        - {x: 15, y: -3}
+        - {x: -8, y: 9}
+    - name: Main_Char ver 2_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 1}
+        - {x: -22, y: -3}
+        - {x: -22, y: -30}
+        - {x: -18, y: -31}
+        - {x: 19, y: -31}
+        - {x: 21, y: -27}
+        - {x: 21, y: 1}
     outline: []
   spritePackingTag: 
   userData: 
